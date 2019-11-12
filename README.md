@@ -7,3 +7,4 @@ Branch   |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 
 A [babette example](https://github.com/richelbilderbeek/babette_examples).
 
+![](result.png)
