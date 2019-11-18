@@ -7,15 +7,13 @@
 
 library(babette)
 
-nexus_filename <- beastier::get_beast2_example_filename("Primates.nex")
-fasta_filename <- "primates.fas"
-ape::write.FASTA(
-  ape::as.DNAbin(
-    ape::read.nexus.data(nexus_filename)
-  ),
-  file = fasta_filename
-)
+bbt_self_test()
 
+fasta_filename <- "primates.fas"
+save_nexus_as_fasta(
+  nexus_filename = beastier::get_beast2_example_filename("Primates.nex"),
+  fasta_filename = fasta_filename
+)
 
 inference_results <- bbt_run_from_model(
   fasta_filename = fasta_filename,
