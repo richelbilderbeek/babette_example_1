@@ -14,8 +14,14 @@ Using all default settings, only specify a DNA alignment.
 ![Example #1: all default](pics/all_default.png)
 
 ```
-posterior <- bbt_run(
-  "test_output_0.fas"
+fasta_filename <- "primates.fas"
+save_nexus_as_fasta(
+  nexus_filename = beastier::get_beast2_example_filename("Primates.nex"),
+  fasta_filename = fasta_filename
+)
+
+inference_results <- bbt_run(
+  fasta_filename = fasta_filename
 )
 ```
 
