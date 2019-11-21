@@ -1,14 +1,8 @@
-# Code of example 1
-#
-# Works under Windows
-#
-#
-#
+# babette example 1: default settings
 
 library(babette)
 
-bbt_self_test()
-
+# Create a FASTA file
 fasta_filename <- "primates.fas"
 save_nexus_as_fasta(
   nexus_filename = beastier::get_beast2_example_filename("Primates.nex"),
