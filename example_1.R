@@ -15,9 +15,8 @@ save_nexus_as_fasta(
   fasta_filename = fasta_filename
 )
 
-inference_results <- bbt_run_from_model(
-  fasta_filename = fasta_filename,
-  inference_model = create_test_inference_model()
+inference_results <- bbt_run(
+  fasta_filename = fasta_filename
 )
 
 png("result.png", width = 600, height = 600)
