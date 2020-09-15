@@ -24,3 +24,11 @@ after_script:
   # Check if all files are created
   - if [ ! -f result.png ]; then echo "file 'result.png' not found" ; exit 1 ; fi
 
+after_failure:
+  # Download thesis
+  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+
+after_success:
+  # Download thesis
+  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+
