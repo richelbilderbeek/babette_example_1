@@ -8,12 +8,6 @@ name: R-CMD-check
 
 jobs:
   R-CMD-check:
-    strategy:
-      matrix:
-        include:
-          - install_beast2: "true" 
-          - install_beast2: "false"
-
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
@@ -38,10 +32,9 @@ jobs:
         shell: Rscript {0}
 
       - name: Install BEAST2 from CRAN version
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::install_beast2()"; fi
-
+        run: beastier::install_beast2()
+        shell: Rscript {0}
+        
       - name: Run script with CRAN versions
         run: Rscript example_1.R
 
@@ -50,9 +43,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Uninstall BEAST2 from CRAN version
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::uninstall_beast2()"; fi
+        run: beastier::uninstall_beast2()
+        shell: Rscript {0}
 
 
 
@@ -68,9 +60,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Install BEAST2 from GitHub master branches
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::install_beast2()"; fi
+        run: beastier::install_beast2()
+        shell: Rscript {0}
 
       - name: Run script with GitHub master branches
         run: Rscript example_1.R
@@ -80,9 +71,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Uninstall BEAST2 from GitHub master branches
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::uninstall_beast2()"; fi
+        run: beastier::uninstall_beast2()
+        shell: Rscript {0}
 
 
 
@@ -97,9 +87,8 @@ jobs:
         shell: Rscript {0}
 
       - name: Install BEAST2 from GitHub develop branches
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::install_beast2()"; fi
+        run: beastier::install_beast2()
+        shell: Rscript {0}
 
       - name: Run script with GitHub develop branches
         run: Rscript example_1.R
@@ -109,8 +98,7 @@ jobs:
         shell: Rscript {0}
 
       - name: Uninstall BEAST2 from GitHub develop branches
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e "beastier::uninstall_beast2()"; fi
+        run: beastier::uninstall_beast2()
+        shell: Rscript {0}
 
 
