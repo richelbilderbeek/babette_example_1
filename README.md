@@ -30,3 +30,4 @@ All other parameters are set to their defaults, as in BEAUti.
 ## Result
 
 ![](result.png)
+
