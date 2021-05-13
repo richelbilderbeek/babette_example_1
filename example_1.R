@@ -12,10 +12,7 @@ save_nexus_as_fasta(
 inference_results <- bbt_run_from_model(
   fasta_filename = fasta_filename,
   inference_model = create_test_inference_model(),
-  beast2_options = create_beast2_options(
-    input_filename = "temp_input.xml",
-    output_state_filename = "output.state.xml"
-  )
+  beast2_options = create_beast2_options()
 )
 
 png("result.png", width = 600, height = 600)
