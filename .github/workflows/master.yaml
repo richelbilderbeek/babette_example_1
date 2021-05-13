@@ -4,10 +4,10 @@ on:
   push:
   pull_request:
 
-name: R-CMD-check
+name: master
 
 jobs:
-  R-CMD-check:
+  master:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
