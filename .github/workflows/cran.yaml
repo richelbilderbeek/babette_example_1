@@ -29,6 +29,8 @@ jobs:
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
+          remotes::install_github("richelbilderbeek/beastierinstall")
+          remotes::install_github("richelbilderbeek/mauricerinstall")
         shell: Rscript {0}
 
       - name: Install BEAST2 from CRAN version
